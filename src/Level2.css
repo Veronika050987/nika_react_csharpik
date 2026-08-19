@@ -1,0 +1,14 @@
+.compile
+{
+    margin-top: 20px; 
+    padding: 10px 20px;
+    cursor: pointer; 
+    background-color: #20B2AA;
+    color: #F0F8FF;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.compile:hover
+{
+    background-color: #008B8B;
+}

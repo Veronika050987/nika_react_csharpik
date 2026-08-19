@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-
-//Обучение: Объясняем, что методы — это действия, которые объект умеет выполнять, или функции поиска по внутренним свойствам. Задание: найти 5 предметов, кликая на подсказки-методы.
+import "./Level2.css";
+import notepad from "./img/notepad.png";
+import compass from "./img/compass.png";
+import loupe from "./img/loupe.png";
+import lampik from "./img/lampik.png";
+import key from "./img/key.png";
 
 const DESK_ITEMS = [
-  { id: 1, name: '🗒️ Блокнот Сшарпика', method: 'ReadNotes()', found: false },
-  { id: 2, name: '🧭 Компас Вебки', method: 'GetDirection()', found: false },
-  { id: 3, name: '🔍 Лупа', method: 'ZoomImage()', found: false },
-  { id: 4, name: '🔦 Фонарик', method: 'TurnOnLight()', found: false },
-  { id: 5, name: '🔑 Странный ключ', method: 'UnlockSecret()', found: false },
+  { id: 1, name: 'Блокнот Сшарпика', method: 'ReadNotes()', found: false, image: notepad },
+  { id: 2, name: 'Компас Вебки', method: 'GetDirection()', found: false, image: compass},
+  { id: 3, name: 'Лупа', method: 'ZoomImage()', found: false, image: loupe },
+  { id: 4, name: 'Фонарик', method: 'TurnOnLight()', found: false, image: lampik },
+  { id: 5, name: 'Странный ключ', method: 'UnlockSecret()', found: false, image: key },
 ];
  
 export default function Level2({ onComplete }) {
@@ -20,33 +24,73 @@ export default function Level2({ onComplete }) {
   const allFound = items.every(item => item.found);
  
   return (
-<div style={{ maxWidth: '600px', textAlign: 'center' }}>
-<h3>Уровень 2: Осмотр письменного стола 📝</h3>
-<p style={{ background: '#e2e3e5', padding: '10px', borderRadius: '5px' }}>
-<b>Теория:</b> У каждого объекта есть <b>Методы</b> (действия). Чтобы заставить предмет работать, нужно вызвать его метод через точку: <code>loupe.ZoomImage()</code>. Вызови методы, чтобы изучить улики на столе!
-</p>
+    <div style={{ maxWidth: '600px', textAlign: 'center', margin: '0 auto', color: '#00008B' }}>
+      <h3>Уровень 2: Осмотр письменного стола 📝</h3>
+      <p style={{ background: '#B0E0E6', padding: '15px', borderRadius: '8px', lineHeight: '1.5', marginTop: '0', color: '#00008B' }}>
+        <b>Теория:</b> У каждого <b style={{color:'#8B008B'}}>Объекта</b> есть <b style={{color:'#8B008B'}}>Методы</b> (действия). Чтобы заставить предмет работать, нужно вызвать соответствующий ему метод. Нажми на методы под вопросительным знаком, чтобы изучить улики на столе!
+      </p>
  
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', margin: '20px 0' }}>
         {items.map(item => (
-<div key={item.id} style={{ padding: '15px', border: '1px solid #aaa', borderRadius: '8px', background: item.found ? '#d4edda' : '#fff' }}>
-<h4>{item.found ? item.name : '❓ Скрытая улика'}</h4>
-<button 
+          <div key={item.id} style={{ 
+            padding: '15px', 
+            border: item.found ? '2px solid #28a745' : '1px solid #aaa', 
+            borderRadius: '8px', 
+            background: item.found ? '#d4edda' : '#fff',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '10px',
+            color: '#000'
+          }}>
+            {/* Картинка: если предмет найден — показываем его фото, если нет — красивую заглушку */}
+            <div style={{ width: '70px', height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: item.found ? 'transparent' : '#f0f0f0', borderRadius: '50%' }}>
+              {item.found ? (
+                <img 
+                  src={item.image} 
+                  alt={item.name} 
+                  style={{ width: '60px', height: '60px', objectFit: 'contain' }} 
+                />
+              ) : (
+                <span style={{ fontSize: '32px' }}>❓</span>
+              )}
+            </div>
+
+            <h4 style={{ margin: '5px 0' }}>{item.found ? item.name : 'Скрытая улика'}</h4>
+            
+            <button 
               disabled={item.found}
               onClick={() => triggerMethod(item.id)}
-              style={{ fontFamily: 'monospace', padding: '5px 10px', cursor: 'pointer' }}
->
+              style={{ 
+                fontFamily: 'monospace', 
+                padding: '8px 12px', 
+                cursor: item.found ? 'default' : 'pointer',
+                background: item.found ? '#e2e3e5' : '#007bff',
+                color: item.found ? '#6c757d' : '#fff',
+                border: 'none',
+                borderRadius: '4px',
+                fontWeight: 'bold'
+              }}
+            >
               .{item.method}
-</button>
-</div>
+            </button>
+          </div>
         ))}
-</div>
+      </div>
  
       {allFound && (
-<div>
-<p style={{ color: 'green', fontWeight: 'bold' }}>Вы нашли Ключ! Но от чего он? Вебка заметил подозрительного кота и велосипед у окна...</p>
-<button style={{ padding: '10px 20px', cursor: 'pointer' }} onClick={onComplete}>Идти к окну</button>
-</div>
+        <div style={{ background: '#d4edda', padding: '15px', borderRadius: '8px', border: '1px solid #c3e6cb', marginTop: '20px' }}>
+          <p style={{ color: '#155724', fontWeight: 'bold', margin: '0 0 10px 0' }}>
+            Вы нашли Ключ! Но от чего он? Вебка заметил подозрительного кота и велосипед у окна...
+          </p>
+          <button 
+          className='compile'
+           onClick={onComplete}>
+            Идти к окну
+          </button>
+        </div>
       )}
-</div>
+    </div>
   );
 }

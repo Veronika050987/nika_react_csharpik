@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-//Обучение: Объясняем понятие Инкапсуляции (сокрытие данных). У велосипеда есть публичный метод RingBell() и приватный (скрытый) багажник private string trunk. Доступ к багажнику закрыт, пока мы не передадим ключ (isCatKeyUsed).
-
 export default function Level3({ onComplete }) {
   const [catStatus, setCatStatus] = useState('Кот довольно урчит. На его ошейнике висит замок. Нужен ключ со стола!');
   const [bikeStatus, setBikeStatus] = useState('Игрушечный велосипед заперт. Внутри багажника что-то лежит.');
@@ -25,7 +23,7 @@ export default function Level3({ onComplete }) {
  
   return (
 <div style={{ maxWidth: '600px', textAlign: 'center' }}>
-<h3>Уровень 3: Кот и Велосипед 🐈‍⬛ 🚲</h3>
+<h3>Уровень 3: Кот и Велосипед</h3>
 <p style={{ background: '#e2e3e5', padding: '10px', borderRadius: '5px' }}>
 <b>Теория:</b> В ООП есть <b>Инкапсуляция</b>. Это защита внутренних данных объекта. Багажник велосипеда имеет статус <code>private</code> (скрыт от всех). Чтобы открыть его, нужен правильный ключ доступа!
 </p>
