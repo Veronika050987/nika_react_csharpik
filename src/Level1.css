@@ -1,0 +1,36 @@
+.car
+{
+    background-color: #FF6347;
+    color: #F0F8FF;
+    border-radius: 7px;
+    font-size: 16px;
+}
+.car:hover
+{
+    background-color: #FF8C00;
+}
+.other
+{
+    background-color: #32CD32;
+    color: #191970;
+    border-radius: 7px;
+    font-size: 16px;
+}
+.other:hover
+{
+    background-color: #90EE90;
+}
+.compile
+{
+    margin-top: 20px; 
+    padding: 10px 20px;
+    cursor: pointer; 
+    background-color: #20B2AA;
+    color: #F0F8FF;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.compile:hover
+{
+    background-color: #008B8B;
+}

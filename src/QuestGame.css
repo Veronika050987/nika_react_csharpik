@@ -1,0 +1,78 @@
+.header 
+{ 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 25px; 
+    width: 100%;
+    box-sizing: border-box; /* Защита от бегунка прокрутки */
+    border-bottom: 2px solid #ddd; 
+    padding-bottom: 6px;
+    padding-bottom: 5px;
+}
+.header_title
+{
+    display: flex; 
+    align-items: center;
+    color: #FF4500;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.container
+{ 
+    font-family: Arial, sans-serif; 
+    background-color: #E0FFFF; 
+    min-height: 100vh; 
+    padding: 20px;
+    box-sizing: border-box; /* Гарантирует, что padding не раздувает экран */
+    overflow-x: hidden;     /* Жесткая страховка от появления горизонтального бегунка */
+}
+
+.badge 
+{ 
+    background-color: #3CB371; 
+    color: white; 
+    padding: 5px 15px; 
+    border-radius: 15px; 
+    font-weight: bold; 
+}
+.main 
+{ 
+    display: flex; 
+    justify-content: center; 
+    margin-top: 10px; 
+}
+.card 
+{ 
+    background-color: #B0E0E6;
+    color: #00008B; 
+    font-size: 17px;
+    padding: 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    max-width: 600px; 
+    text-align: center;
+}
+.button 
+{ 
+    background-color: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 12px 24px; 
+    font-size: 16px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    margin-top: 20px; 
+}
+
+.button:hover 
+{ 
+    background-color: #2E8B57; 
+}
+.box
+{
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
