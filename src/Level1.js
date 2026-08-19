@@ -45,19 +45,37 @@ export default function Level1({ onComplete }) {
     if (boxName === 'Car') setBoxCar([...boxCar, item]);
     if (boxName === 'Other') setBoxOther([...boxOther, item]);
   };
- 
+  
+  const [message, setMessage] = useState('');
+  const [messageType, setMessageType] = useState(''); // 'success' или 'error'
+
   const checkResults = () => {
-    const carErrors = boxCar.filter(i => i.type !== 'Car').length;
-    const otherErrors = boxOther.filter(i => i.type !== 'Other').length;
- 
-    if (items.length === 0 && carErrors === 0 && otherErrors === 0) {
-      alert('Отлично! Ты распределил объекты по классам!');
+  const carErrors = boxCar.filter(i => i.type !== 'Car').length;
+  const otherErrors = boxOther.filter(i => i.type !== 'Other').length;
+
+  if (items.length === 0 && carErrors === 0 && otherErrors === 0) {
+    setMessage('🎉 Отлично! Ты распределил объекты по классам!');
+    setMessageType('success');
+    
+    // Даем игроку 2 секунды увидеть сообщение, затем переключаем уровень
+    setTimeout(() => {
       onComplete();
-    } else {
-      alert('Где-то ошибка или ты забыл собрать все вещи под кроватью! Проверь коробки.');
-    }
-  };
- 
+      setMessage(''); // Сбрасываем сообщение для следующего уровня
+    }, 2000);
+
+  } else {
+    setMessage('❌ Где-то ошибка или ты забыл собрать все вещи под кроватью! Проверь коробки.');
+    setMessageType('error');
+  }
+};
+
+const handleReset = () => {
+  setItems(ITEMS);      // Возвращаем все вещи на место
+  setBoxCar([]);        // Очищаем коробку Car
+  setBoxOther([]);      // Очищаем коробку Other
+  setMessage('');       // Прячем всплывающее окно
+};
+
   return (
     /* box-sizing: border-box и width: 100% страхуют от появления боковой прокрутки */
     <div style={{ maxWidth: '800px', width: '100%', boxSizing: 'border-box', textAlign: 'center', color: '#00008B' }}>
@@ -88,7 +106,7 @@ export default function Level1({ onComplete }) {
           border: '1px solid #ccc', 
           padding: '10px', 
           borderRadius: '5px', 
-          background: '#00FF7F',
+          background: '#3CB371',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center', // Центрируем текст, картинку и кнопки по горизонтали
@@ -177,6 +195,50 @@ export default function Level1({ onComplete }) {
       onClick={checkResults}>
         Запустить проверку кода
       </button>
+            {/* Всплывающее окошко внутри приложения */}
+      {message && (
+      <div style={{
+        position: 'fixed',
+        top: '20px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        background: messageType === 'success' ? '#d4edda' : '#f8d7da',
+        color: messageType === 'success' ? '#155724' : '#721c24',
+        border: messageType === 'success' ? '2px solid #c3e6cb' : '2px solid #f5c6cb',
+        padding: '15px 30px',
+        borderRadius: '8px',
+        boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+        zIndex: 1000,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: '16px',
+        maxWidth: '90%',
+        width: '400px',
+        animation: 'fadeIn 0.3s ease'
+    }}>
+    <div>{message}</div>
+    
+    {/* Кнопка закрытия для ошибок, которая теперь перезапускает страницу */}
+  {messageType === 'error' && (
+    <button 
+    onClick onClick={handleReset} // Перезапуск страницы
+    style={{
+      marginTop: '10px',
+      padding: '5px 12px',
+      background: '#721c24',
+      color: '#fff',
+      border: 'none',
+      borderRadius: '4px',
+      cursor: 'pointer',
+      fontWeight: 'bold'
+    }}
+  >
+    Понятно
+  </button>
+  )}
+    </div>
+    )}
+
     </div>
   );
 }
