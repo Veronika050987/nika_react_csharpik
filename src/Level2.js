@@ -5,6 +5,7 @@ import compass from "./img/compass.png";
 import loupe from "./img/loupe.png";
 import lampik from "./img/lampik.png";
 import key from "./img/key.png";
+import table from "./img/table.png";
 
 const DESK_ITEMS = [
   { id: 1, name: 'Блокнот Сшарпика', method: 'ReadNotes()', found: false, image: notepad },
@@ -25,9 +26,20 @@ export default function Level2({ onComplete }) {
  
   return (
     <div style={{ maxWidth: '600px', textAlign: 'center', margin: '0 auto', color: '#00008B' }}>
-      <h3>Уровень 2: Осмотр письменного стола 📝</h3>
+      <h3
+      style={{ 
+        marginTop: '10px', 
+        marginBottom: '10px', 
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '10px'
+        }}>
+        Уровень 2: Осмотр письменного стола
+        <img src={table} width={80} height={80} alt='table'/> 
+      </h3>
       <p style={{ background: '#B0E0E6', padding: '15px', borderRadius: '8px', lineHeight: '1.5', marginTop: '0', color: '#00008B' }}>
-        <b>Теория:</b> У каждого <b style={{color:'#8B008B'}}>Объекта</b> есть <b style={{color:'#8B008B'}}>Методы</b> (действия). Чтобы заставить предмет работать, нужно вызвать соответствующий ему метод. Нажми на методы под вопросительным знаком, чтобы изучить улики на столе!
+        <b>Теория:</b> Всё, что ты видишь на столе это <b style={{color:'#8B008B'}}>Объекты</b>(вещи). А всё, что они умеют делать это их <b style={{color:'#8B008B'}}>Методы</b> (действия). Чтобы предмет заработал, нужно вызвать его <b style={{color:'#8B008B'}}>Метод</b>. Скорее нажимай на <b style={{color:'#8B008B'}}>Методы</b> под вопросительным знаком, чтобы изучить все улики!
       </p>
  
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', margin: '20px 0' }}>
@@ -82,7 +94,7 @@ export default function Level2({ onComplete }) {
       {allFound && (
         <div style={{ background: '#d4edda', padding: '15px', borderRadius: '8px', border: '1px solid #c3e6cb', marginTop: '20px' }}>
           <p style={{ color: '#155724', fontWeight: 'bold', margin: '0 0 10px 0' }}>
-            Вы нашли Ключ! Но от чего он? Вебка заметил подозрительного кота и велосипед у окна...
+            Вы нашли ключ! Но от чего он? Вебка заметил подозрительного кота и велосипед у окна...
           </p>
           <button 
           className='compile'

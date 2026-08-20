@@ -4,6 +4,9 @@ import Level2 from './Level2';
 import Level3 from './Level3';
 import './QuestGame.css';
 import loupik1 from './img/loupik1.png';
+import tears from './img/tears.png';
+import done from './img/done.png';
+import happy from './img/happy.png';
  
 export default function QuestGame() {
   const [level, setLevel] = useState(0); // 0: Старт, 1-3: Уровни, 4: Финал
@@ -15,7 +18,7 @@ export default function QuestGame() {
 <div className='container'>
 <header className='header'>
 <h2 className='header_title'>
-    <img src={loupik1} width={90} height={120} alt='webka' /> 
+    <img src={loupik1} width={90} height={120} alt='loupik' /> 
     Детектив Вебка и пропавшая машинка
     </h2>
         {level > 0 && level < 4 && <span className='badge'>Уровень {level} из 3</span>}
@@ -25,7 +28,9 @@ export default function QuestGame() {
         {level === 0 && (
 <div className='card'>
 <h3>Привет, кодер!</h3>
-<p>У твоего друга <b>Сшарпика</b> пропала редкая коллекционная машинка! Помоги детективу <b>Вебке</b> раскрыть это дело, используя силу программирования на C#.</p>
+<img src={tears} width={270} height={280} alt='tears' />  
+<p>У твоего друга <b>Сшарпика</b> пропала редкая коллекционная машинка.
+Помоги детективу <b>Вебке</b> раскрыть это дело, используя силу программирования на C#.</p>
 <button className='button' onClick={nextLevel}>Начать расследование</button>
 </div>
         )}
@@ -36,10 +41,17 @@ export default function QuestGame() {
  
         {level === 4 && (
 <div className='card'>
-<h3>🎉 Дело раскрыто!</h3>
+<h3> 
+        <p>Дело раскрыто! <img src={done} width={60} height={60} alt='done' /></p>
+</h3>
 <p>Вы открыли секретный багажник велосипеда с помощью ключа на ошейнике кота!</p>
+<div className='character-block'> 
+<img src={happy} width={240} height={240} alt='happy' />
 <p><b>Сшарпик:</b> «Ура! Моя машинка на месте! Вебка, ты лучший детектив-программист!»</p>
-<p>Теперь ты знаешь основы ООП: Классы, Объекты, Методы и Инкапсуляцию.</p>
+</div>
+<p>Спасибо за помощь, кодер! Теперь ты знаешь главные секреты создания игр (ООП): 
+    <b> Классы</b> (коробки игрушек), <b>Объекты</b> (сами игрушки), <b>Методы</b> (их суперсилы) и <b>Инкапсуляцию</b> (тайные багажники)!
+</p>
 <button className='button' onClick={restartGame}>Играть снова</button>
 </div>
         )}

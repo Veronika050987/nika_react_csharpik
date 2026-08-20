@@ -54,6 +54,14 @@
     max-width: 600px; 
     text-align: center;
 }
+.character-block {
+    display: flex;
+    align-items: center;    /* Выравнивает картинку и текст ровно по центру по вертикали */
+    justify-content: center; /* Центрирует весь блок внутри карточки */
+    gap: 15px;              /* Расстояние между картинкой и текстом */
+    margin: 20px 0;         /* Внешние отступы сверху и снизу блока */
+    text-align: left;       /* Делает сам текст Сшарпика ровным по левому краю (так красивее рядом с фото) */
+}
 .button 
 { 
     background-color: #28a745; 

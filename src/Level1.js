@@ -80,7 +80,6 @@ const handleReset = () => {
     /* box-sizing: border-box и width: 100% страхуют от появления боковой прокрутки */
     <div style={{ maxWidth: '800px', width: '100%', boxSizing: 'border-box', textAlign: 'center', color: '#00008B' }}>
       
-      {/* Уменьшили верхний отступ (margin-top), чтобы поднять весь блок ближе к заголовку с мальчиком */}
       <h3 style={{ 
         marginTop: '10px', 
         marginBottom: '10px', 
@@ -106,7 +105,7 @@ const handleReset = () => {
           border: '1px solid #ccc', 
           padding: '10px', 
           borderRadius: '5px', 
-          background: '#3CB371',
+          background: 'linear-gradient(to bottom right, #6495ED, #87CEFA, #32CD32)',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center', // Центрируем текст, картинку и кнопки по горизонтали
@@ -221,7 +220,7 @@ const handleReset = () => {
     {/* Кнопка закрытия для ошибок, которая теперь перезапускает страницу */}
   {messageType === 'error' && (
     <button 
-    onClick onClick={handleReset} // Перезапуск страницы
+    onClick={handleReset} // Перезапуск страницы
     style={{
       marginTop: '10px',
       padding: '5px 12px',
