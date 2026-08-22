@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/nika_react_csharpik/static/css/main.e9c4bde6.css",
-    "main.js": "/nika_react_csharpik/static/js/main.f4511ad4.js",
+    "main.js": "/nika_react_csharpik/static/js/main.77a4d049.js",
     "static/media/bear.png": "/nika_react_csharpik/static/media/bear.6a98bde7c984b3063db6.png",
     "static/media/cat.png": "/nika_react_csharpik/static/media/cat.5009b44a7aaf7e34b510.png",
     "static/media/notepad.png": "/nika_react_csharpik/static/media/notepad.1a6d9c284621b1564730.png",
     "static/media/drive.png": "/nika_react_csharpik/static/media/drive.691fec0f804787554605.png",
+    "static/media/success.png": "/nika_react_csharpik/static/media/success.df4fbed549b71c117c5d.png",
     "static/media/box.png": "/nika_react_csharpik/static/media/box.e8052ed0320d887e331c.png",
     "static/media/wheel.png": "/nika_react_csharpik/static/media/wheel.c1435ba1d29367e2f949.png",
     "static/media/compass.png": "/nika_react_csharpik/static/media/compass.b76e399b9f1be26ce47a.png",
@@ -21,6 +22,7 @@
     "static/media/book.png": "/nika_react_csharpik/static/media/book.fb460ebebe9fe34309bb.png",
     "static/media/body.png": "/nika_react_csharpik/static/media/body.20cfbad57f7c2636ec00.png",
     "static/media/tears.png": "/nika_react_csharpik/static/media/tears.e5f51dd6d471c41c3b93.png",
+    "static/media/question.png": "/nika_react_csharpik/static/media/question.19872fc7e6d878c4aab7.png",
     "static/media/happy.png": "/nika_react_csharpik/static/media/happy.8caf965b5b5c35ca4ec5.png",
     "static/media/key.png": "/nika_react_csharpik/static/media/key.a94b618080741f8a8f78.png",
     "static/media/lampik.png": "/nika_react_csharpik/static/media/lampik.ac0a99aa3e4efa6814b0.png",
@@ -29,10 +31,10 @@
     "static/media/logo.svg": "/nika_react_csharpik/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/nika_react_csharpik/index.html",
     "main.e9c4bde6.css.map": "/nika_react_csharpik/static/css/main.e9c4bde6.css.map",
-    "main.f4511ad4.js.map": "/nika_react_csharpik/static/js/main.f4511ad4.js.map"
+    "main.77a4d049.js.map": "/nika_react_csharpik/static/js/main.77a4d049.js.map"
   },
   "entrypoints": [
     "static/css/main.e9c4bde6.css",
-    "static/js/main.f4511ad4.js"
+    "static/js/main.77a4d049.js"
   ]
 }
