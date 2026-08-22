@@ -12,6 +12,8 @@ import book from './img/book.png';
 import apple from './img/apple.png';
 import sock from './img/sock.png';
 import pencil from './img/pencil.png';
+import question from './img/question.png';
+import success from './img/success.png';
 
 const ITEMS = [
   { id: 1, name: 'Колесо', type: 'Car', image: wheel },
@@ -54,7 +56,10 @@ export default function Level1({ onComplete }) {
   const otherErrors = boxOther.filter(i => i.type !== 'Other').length;
 
   if (items.length === 0 && carErrors === 0 && otherErrors === 0) {
-    setMessage('🎉 Отлично! Ты распределил объекты по классам!');
+    setMessage( <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+    <img src={success} alt="success" style={{ width: '60px', height: '60px', objectFit: 'contain' }} />
+    Отлично! Ты распределил объекты по классам!
+  </span>);
     setMessageType('success');
     
     // Даем игроку 2 секунды увидеть сообщение, затем переключаем уровень
@@ -93,10 +98,12 @@ const handleReset = () => {
       </h3>
       
       <p style={{ background: '#B0E0E6', padding: '15px', borderRadius: '8px', lineHeight: '1.5', marginTop: '0', color: '#00008B' }}>
+        <img src={book} width={20} height={20} alt='level1'/>
         <b>Теория:</b> В программировании <b style={{color:'#8B008B'}}>Класс</b> это коробка, в которой должны лежать только правильные предметы, а сами предметы это <b style={{color:'#8B008B'}}>Объекты</b>. 
         В коробке с наклейкой <code style={{ color: '#FF0000' }}>class Car</code> лежат только детали гоночной машинки. В коробке с наклейкой <code style={{ color: '#008000' }}>class Other</code> хранится всё остальное. 
         <br/><br/>
-        🎯 <b>Твоё задание:</b> Отсортируй объекты по двум коробкам - распредели все предметы по их типам (классам) с помощью клика мышки!
+        <img src={question} width={20} height={20} alt='level1'/>
+        <b>Твоё задание:</b> Отсортируй объекты по двум коробкам - распредели все предметы по их типам (классам) с помощью клика мышки!
       </p>
  
         <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', margin: '10px 0', flexWrap: 'wrap' }}>
