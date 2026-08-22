@@ -103,7 +103,7 @@ const handleReset = () => {
         В коробке с наклейкой <code style={{ color: '#FF0000' }}>class Car</code> лежат только детали гоночной машинки. В коробке с наклейкой <code style={{ color: '#008000' }}>class Other</code> хранится всё остальное. 
         <br/><br/>
         <img src={question} width={20} height={20} alt='level1'/>
-        <b>Твоё задание:</b> Отсортируй объекты по двум коробкам - распредели все предметы по их типам (классам) с помощью клика мышки!
+        <b>Твоё задание:</b> Отсортируй объекты по двум коробкам - распредели все предметы по их типам (<b style={{color:'#8B008B'}}>классам</b>) с помощью клика мышки!
       </p>
  
         <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', margin: '10px 0', flexWrap: 'wrap' }}>
