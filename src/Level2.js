@@ -6,6 +6,8 @@ import loupe from "./img/loupe.png";
 import lampik from "./img/lampik.png";
 import key from "./img/key.png";
 import table from "./img/table.png";
+import book from './img/book.png';
+import question from './img/question.png';
 
 const DESK_ITEMS = [
   { id: 1, name: 'Блокнот Сшарпика', method: 'ReadNotes()', found: false, image: notepad },
@@ -39,7 +41,12 @@ export default function Level2({ onComplete }) {
         <img src={table} width={80} height={80} alt='table'/> 
       </h3>
       <p style={{ background: '#B0E0E6', padding: '15px', borderRadius: '8px', lineHeight: '1.5', marginTop: '0', color: '#00008B' }}>
-        <b>Теория:</b> Всё, что ты видишь на столе это <b style={{color:'#8B008B'}}>Объекты</b>(вещи). А всё, что они умеют делать это их <b style={{color:'#8B008B'}}>Методы</b> (действия). Чтобы предмет заработал, нужно вызвать его <b style={{color:'#8B008B'}}>Метод</b>. Скорее нажимай на <b style={{color:'#8B008B'}}>Методы</b> под вопросительным знаком, чтобы изучить все улики!
+        <img src={book} width={20} height={20} alt='level1'/>
+        <b>Теория:</b> Всё, что ты видишь на столе это <b style={{color:'#8B008B'}}>Объекты </b>(вещи). А всё, что они умеют делать это их <b style={{color:'#8B008B'}}>Методы</b> (действия). Чтобы предмет заработал, нужно вызвать его <b style={{color:'#8B008B'}}>Метод</b>. 
+        <br/><br/>
+        <img src={question} width={20} height={20} alt='level1'/>
+        <b>Твоё задание: </b>
+        Нажимай на <b style={{color:'#8B008B'}}>Методы</b> под вопросительным знаком, чтобы изучить все улики!
       </p>
  
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', margin: '20px 0' }}>
@@ -48,7 +55,7 @@ export default function Level2({ onComplete }) {
             padding: '15px', 
             border: item.found ? '2px solid #28a745' : '1px solid #aaa', 
             borderRadius: '8px', 
-            background: item.found ? '#d4edda' : '#fff',
+            background: item.found ? '#d4edda' : 'linear-gradient(to bottom right, #6495ED, #87CEFA, #32CD32)',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -65,7 +72,7 @@ export default function Level2({ onComplete }) {
                   style={{ width: '60px', height: '60px', objectFit: 'contain' }} 
                 />
               ) : (
-                <span style={{ fontSize: '32px' }}>❓</span>
+                <span><img src={question} width={38} height={38} alt='level1'/></span>
               )}
             </div>
 
