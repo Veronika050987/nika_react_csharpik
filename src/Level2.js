@@ -19,15 +19,66 @@ const DESK_ITEMS = [
  
 export default function Level2({ onComplete }) {
   const [items, setItems] = useState(DESK_ITEMS);
+  const [showModal, setShowModal] = useState(false); // Состояние для показа модального окна
  
   const triggerMethod = (id) => {
-    setItems(items.map(item => item.id === id ? { ...item, found: true } : item));
+    const updatedItems = items.map(item => item.id === id ? { ...item, found: true } : item);
+    setItems(updatedItems);
+
+    // Если после этого клика все предметы стали найденными — показываем окно
+    if (updatedItems.every(item => item.found)) {
+      setShowModal(true);
+    }
   };
  
-  const allFound = items.every(item => item.found);
- 
   return (
-    <div style={{ maxWidth: '600px', textAlign: 'center', margin: '0 auto', color: '#00008B' }}>
+    <div style={{ maxWidth: '600px', textAlign: 'center', margin: '0 auto', color: '#00008B', position: 'relative' }}>
+      
+      {/* МОДАЛЬНОЕ ОКНО ВВЕРХУ ЭКРАНА */}
+      {showModal && (
+        <div style={{
+          position: 'fixed',
+          top: '20px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '90%',
+          maxWidth: '550px',
+          background: '#ffffff',
+          padding: '20px',
+          borderRadius: '12px',
+          boxShadow: '0 10px 30px rgba(0,0,0,0.25)',
+          border: '3px solid #28a745',
+          zIndex: 1000,
+          animation: 'slideDown 0.3s ease-out',
+          textAlign: 'center'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '15px' }}>
+            {/* Ваша картинка ключа вместо эмодзи */}
+            <img src={key} width={40} height={40} alt="Ключ" style={{ objectFit: 'contain' }} />
+            <span style={{ color: '#155724', fontWeight: 'bold', fontSize: '18px', lineHeight: '1.4' }}>
+              Отлично! Ты распределил объекты по классам!
+            </span>
+          </div>
+          
+          <p style={{ color: '#333', fontSize: '15px', margin: '0 0 20px 0', lineHeight: '1.5' }}>
+            Вы нашли ключ! Но от чего он? Вебка заметил подозрительного кота и велосипед у окна...
+          </p>
+          
+          <button 
+            className='compile'
+            onClick={onComplete}
+            style={{ 
+              padding: '10px 24px', 
+              fontSize: '16px', 
+              cursor: 'pointer',
+              fontWeight: 'bold'
+            }}
+          >
+            Идти к окну
+          </button>
+        </div>
+      )}
+
       <h3
       style={{ 
         marginTop: '10px', 
@@ -63,7 +114,6 @@ export default function Level2({ onComplete }) {
             gap: '10px',
             color: '#000'
           }}>
-            {/* Картинка: если предмет найден — показываем его фото, если нет — красивую заглушку */}
             <div style={{ width: '70px', height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: item.found ? 'transparent' : '#f0f0f0', borderRadius: '50%' }}>
               {item.found ? (
                 <img 
@@ -85,31 +135,19 @@ export default function Level2({ onComplete }) {
                 fontFamily: 'monospace', 
                 padding: '8px 12px', 
                 cursor: item.found ? 'default' : 'pointer',
-                background: item.found ? '#e2e3e5' : '#007bff',
-                color: item.found ? '#6c757d' : '#fff',
+                background: item.found ? '#007bff' : '#007bff', // Кнопка активна, пока не найдено
+                color: '#fff',
                 border: 'none',
                 borderRadius: '4px',
-                fontWeight: 'bold'
+                fontWeight: 'bold          ' // Исправлена опечатка в стиле
               }}
+              className={item.found ? '' : 'active-btn'} // Стилизация через классы при необходимости
             >
               .{item.method}
             </button>
           </div>
         ))}
       </div>
- 
-      {allFound && (
-        <div style={{ background: '#d4edda', padding: '15px', borderRadius: '8px', border: '1px solid #c3e6cb', marginTop: '20px' }}>
-          <p style={{ color: '#155724', fontWeight: 'bold', margin: '0 0 10px 0' }}>
-            Вы нашли ключ! Но от чего он? Вебка заметил подозрительного кота и велосипед у окна...
-          </p>
-          <button 
-          className='compile'
-           onClick={onComplete}>
-            Идти к окну
-          </button>
-        </div>
-      )}
     </div>
   );
 }
