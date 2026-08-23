@@ -57,7 +57,7 @@ export default function Level1({ onComplete }) {
 
   if (items.length === 0 && carErrors === 0 && otherErrors === 0) {
     setMessage( <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-    <img src={success} alt="success" style={{ width: '60px', height: '60px', objectFit: 'contain' }} />
+    <img src={success} alt="success" style={{ width: '60px', height: '60px', objectFit: 'contain', loading: 'lazy' }} />
     Отлично! Ты распределил объекты по классам!
   </span>);
     setMessageType('success');
@@ -94,15 +94,15 @@ const handleReset = () => {
         gap: '10px'
         }}>
         Уровень 1: Беспорядок под кроватью 
-        <img src={bed} width={80} height={80} alt='bed'/>
+        <img src={bed} width={80} height={80} alt='bed' loading="lazy"/>
       </h3>
       
       <p style={{ background: '#B0E0E6', padding: '15px', borderRadius: '8px', lineHeight: '1.5', marginTop: '0', color: '#00008B' }}>
-        <img src={book} width={20} height={20} alt='level1'/>
+        <img src={book} width={20} height={20} alt='level1' loading="lazy"/>
         <b>Теория:</b> В программировании <b style={{color:'#8B008B'}}>Класс</b> это коробка, в которой должны лежать только правильные предметы, а сами предметы это <b style={{color:'#8B008B'}}>Объекты</b>. 
         В коробке с наклейкой <code style={{ color: '#FF0000' }}>class Car</code> лежат только детали гоночной машинки. В коробке с наклейкой <code style={{ color: '#008000' }}>class Other</code> хранится всё остальное. 
         <br/><br/>
-        <img src={question} width={20} height={20} alt='level1'/>
+        <img src={question} width={20} height={20} alt='level1' loading="lazy"/>
         <b>Твоё задание:</b> Отсортируй объекты по двум коробкам - распредели все предметы по их типам (<b style={{color:'#8B008B'}}>классам</b>) с помощью клика мышки!
       </p>
  
@@ -116,14 +116,15 @@ const handleReset = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center', // Центрируем текст, картинку и кнопки по горизонтали
-          gap: '5px' // Делаем аккуратные отступы между элементами карточки
+          gap: '5px', // Делаем аккуратные отступы между элементами карточки
+          loading: 'lazy'
         }}>
         {/* Рендерим картинку, только если она есть у элемента */}
         {item.image && (
         <img 
           src={item.image} 
           alt={item.name} 
-          style={{ width: '50px', height: '50px', objectFit: 'contain', marginBottom: '5px' }} 
+          style={{ width: '50px', height: '50px', objectFit: 'contain', marginBottom: '5px', loading: 'lazy' }} 
         />
       )}
       
@@ -159,7 +160,7 @@ const handleReset = () => {
             textAlign: 'center',
             width: '100%' 
             }}>
-            <img src={box} width={40} height={40} alt='box'/> 
+            <img src={box} width={40} height={40} alt='box' loading="lazy"/> 
             class Car
             </h4>
           <div style={{ textAlign: 'center', color: '#000' }}> 
@@ -187,7 +188,7 @@ const handleReset = () => {
             textAlign: 'center',
             width: '100%' 
             }}>
-            <img src={box} width={40} height={40} alt='box'/> 
+            <img src={box} width={40} height={40} alt='box' loading="lazy"/> 
             class Other
             </h4>
           <div style={{ textAlign: 'center', color: '#000' }}> 
