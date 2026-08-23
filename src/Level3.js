@@ -52,13 +52,13 @@ export default function Level3({ onComplete }) {
       {showSuccessModal && (
         <div className="modal-window-lvl3 success-modal">
           <div className="modal-title-success">
-            <img src={success} alt="success" className="success-img-lvl3" loading="lazy" />
+            <img src={success} alt="success" className="success-img-lvl3" loading="lazy" aspectRatio= '1 / 1' />
           </div>
           <p className="modal-text-lvl3 bold-text">
             Багажник открыт! Внутри лежит коллекционная машинка Сшарпика!
           </p>
           <p>
-            <img src={car} alt='car' className="car-img-lvl3" loading="lazy" />
+            <img src={car} alt='car' className="car-img-lvl3" loading="lazy" aspectRatio= '1 / 1' />
           </p>
           <button 
             onClick={onComplete} 
@@ -71,10 +71,10 @@ export default function Level3({ onComplete }) {
 
       <h3 className="lvl3-h3">Уровень 3: Подозрительный кот и велосипед</h3>
       <p className="lvl3-p">
-        <img src={book} width={20} height={20} alt='book' loading="lazy" style={{ verticalAlign: 'middle', marginRight: '5px', aspectRatio: '1 / 1' }} />
+        <img src={book} width={20} height={20} alt='book' loading="lazy" aspectRatio= '1 / 1' style={{ verticalAlign: 'middle', marginRight: '5px', aspectRatio: '1 / 1' }} />
         <b>Теория:</b> <b style={{color:'#8B008B'}}>Инкапсуляция</b> в ООП это защита внутренних данных <b style={{color:'#8B008B'}}>объекта</b>. Багажник велосипеда имеет статус <code style={{color: '#FF0000'}}>private</code> (скрыт от всех). 
         <br/><br/>
-        <img src={question} width={20} height={20} alt='question' loading="lazy" style={{ verticalAlign: 'middle', marginRight: '5px', aspectRatio: '1 / 1' }} />
+        <img src={question} width={20} height={20} alt='question' loading="lazy" aspectRatio= '1 / 1'style={{ verticalAlign: 'middle', marginRight: '5px', aspectRatio: '1 / 1' }} />
         <b>Твоё задание: </b>
         Попробуй открыть багажник велосипеда.
       </p>
@@ -85,7 +85,7 @@ export default function Level3({ onComplete }) {
         <div className="lvl3-card">
           <h4 className="lvl3-card-title">Кот Сшарпика</h4>
           <div className="img-wrapper">
-            <img src={cat} alt='cat' className="character-img" loading="lazy" />
+            <img src={cat} alt='cat' className="character-img" loading="lazy" aspectRatio= '1 / 1'/>
           </div>
           <p className="status-text">{catStatus}</p>
           {!hasKeyFromCat && <button onClick={clickCat} className='button lvl3-action-btn'>Использовать ключ со стола</button>}
@@ -95,7 +95,7 @@ export default function Level3({ onComplete }) {
         <div className="lvl3-card">
           <h4 className="lvl3-card-title">Игрушечный велосипед</h4>
           <div className="img-wrapper">
-            <img src={velo} alt='velo' className="character-img" loading="lazy" />
+            <img src={velo} alt='velo' className="character-img" loading="lazy" aspectRatio= '1 / 1'/>
           </div>
           <p className="status-text">{bikeStatus}</p>
           
