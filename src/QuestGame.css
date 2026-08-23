@@ -3,12 +3,12 @@
     display: flex; 
     justify-content: center; 
     align-items: center;
-    gap: 25px; 
+    gap: 15px; /* Уменьшено для мобильных */
     width: 100%;
     box-sizing: border-box; /* Защита от бегунка прокрутки */
     border-bottom: 2px solid #ddd; 
-    padding-bottom: 6px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    flex-wrap: wrap; /* Чтобы элементы шапки не вылезали за экран */
 }
 .header_title
 {
@@ -17,6 +17,7 @@
     color: #FF4500;
     margin-bottom: 5px;
     margin-top: 15px;
+    font-size: 1.5rem; /* Динамический размер шрифта */
 }
 
 .container
@@ -24,7 +25,7 @@
     font-family: Arial, sans-serif; 
     background-color: #E0FFFF; 
     min-height: 100vh; 
-    padding: 20px;
+    padding: 15px;
     box-sizing: border-box; /* Гарантирует, что padding не раздувает экран */
     overflow-x: hidden;     /* Жесткая страховка от появления горизонтального бегунка */
 }
@@ -41,18 +42,21 @@
 { 
     display: flex; 
     justify-content: center; 
-    margin-top: 10px; 
+    margin-top: 10px;
+    width: 100%; 
 }
 .card 
 { 
     background-color: #B0E0E6;
     color: #00008B; 
     font-size: 17px;
-    padding: 30px; 
+    padding: 20px; 
     border-radius: 12px; 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%; /* Карточка резиновая */ 
     max-width: 600px; 
     text-align: center;
+    box-sizing: border-box; /* Защита от расширения из-за padding */
 }
 .character-block {
     display: flex;
@@ -70,7 +74,10 @@
     font-size: 16px; 
     border-radius: 6px; 
     cursor: pointer; 
-    margin-top: 20px; 
+    margin-top: 20px;
+    width: 100%; /* Кнопка на всю ширину карточки на мобильных */
+    max-width: 280px; /* Но не слишком широкая */
+    box-sizing: border-box; 
 }
 
 .button:hover 
@@ -82,4 +89,23 @@
     display: flex; 
     align-items: center; 
     justify-content: center; 
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Элементы шапки встают друг под друга */
+        text-align: center;
+        gap: 10px;
+    }
+
+    .character-block {
+        flex-direction: column; /* Картинка персонажа теперь сверху, текст снизу */
+        text-align: center; /* Центрируем текст на мобильном */
+        gap: 10px;
+    }
+
+    .card {
+        padding: 20px 15px; /* Еще меньше отступы внутри карточки */
+        font-size: 15px; /* Чуть уменьшаем шрифт для читаемости */
+    }
 }
