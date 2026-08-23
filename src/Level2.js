@@ -39,7 +39,7 @@ export default function Level2({ onComplete }) {
        <div className="modal-window">
           <div className="modal-header">
             {/* Ваша картинка ключа вместо эмодзи */}
-            <img src={key} className="modal-key-img" alt="Ключ" />
+            <img src={key} className="modal-key-img" alt="Ключ" loading="lazy" aspectRatio= '1 / 1'/>
             <span className='success'>
               Отлично! Ты применил все методы на столе и рассмотрел все улики!
             </span>
@@ -60,13 +60,13 @@ export default function Level2({ onComplete }) {
 
       <h3 className='h3'>
         Уровень 2: Осмотр письменного стола
-        <img src={table} width={80} height={80} alt='table'/> 
+        <img src={table} width={80} height={80} alt='table' loading="lazy" aspectRatio= '1 / 1'/> 
       </h3>
       <p className='p'>
-        <img src={book} width={20} height={20} alt='level1'/>
+        <img src={book} width={20} height={20} alt='book' loading="lazy" aspectRatio= '1 / 1'/>
         <b>Теория:</b> Всё, что ты видишь на столе это <b style={{color:'#8B008B'}}>Объекты </b>(вещи). А всё, что они умеют делать это их <b style={{color:'#8B008B'}}>Методы</b> (действия). Чтобы предмет заработал, нужно вызвать его <b style={{color:'#8B008B'}}>Метод</b>. 
         <br/><br/>
-        <img src={question} width={20} height={20} alt='level1'/>
+        <img src={question} width={20} height={20} alt='question' loading="lazy" aspectRatio= '1 / 1'/>
         <b>Твоё задание: </b>
         Нажимай на <b style={{color:'#8B008B'}}>Методы</b> под вопросительным знаком, чтобы изучить все улики!
       </p>
@@ -83,17 +83,19 @@ export default function Level2({ onComplete }) {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '10px',
-            color: '#000'
+            color: '#000',
+            loading: 'lazy',
+            aspectRatio: '1 / 1'
           }}>
             <div style={{ width: '70px', height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: item.found ? 'transparent' : '#f0f0f0', borderRadius: '50%' }}>
               {item.found ? (
                 <img 
                   src={item.image} 
                   alt={item.name} 
-                  style={{ width: '60px', height: '60px', objectFit: 'contain' }} 
+                  style={{ width: '60px', height: '60px', objectFit: 'contain', loading:"lazy", aspectRatio: '1 / 1' }} 
                 />
               ) : (
-                <span><img src={question} width={38} height={38} alt='level1'/></span>
+                <span><img src={question} width={38} height={38} alt='question' loading="lazy" aspectRatio= '1 / 1'/></span>
               )}
             </div>
 
