@@ -16,7 +16,7 @@ export default function Level3({ onComplete }) {
   const [showSuccessModal, setShowSuccessModal] = useState(false); // Новое состояние для окна победы
  
   const clickCat = () => {
-    setCatStatus('Вы применили ключ со стола! Замок открылся. На ошейнике был спрятан ключ от Багажника!');
+    setCatStatus('Вы применили ключ со стола! Замок открылся. На ошейнике был спрятан ключ от багажника!');
     setHasKeyFromCat(true);
   };
  
