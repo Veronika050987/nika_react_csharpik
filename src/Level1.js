@@ -94,7 +94,7 @@ const handleReset = () => {
         gap: '10px'
         }}>
         Уровень 1: Беспорядок под кроватью 
-        <img src={bed} width={80} height={80} alt='bed' loading="lazy"/>
+        <img src={bed} width={80} height={80} alt='bed' loading="lazy" aspect-ratio= "1 / 1"/>
       </h3>
       
       <p style={{ background: '#B0E0E6', padding: '15px', borderRadius: '8px', lineHeight: '1.5', marginTop: '0', color: '#00008B' }}>
@@ -117,14 +117,15 @@ const handleReset = () => {
           flexDirection: 'column',
           alignItems: 'center', // Центрируем текст, картинку и кнопки по горизонтали
           gap: '5px', // Делаем аккуратные отступы между элементами карточки
-          loading: 'lazy'
+          loading: 'lazy',
+          aspectRatio: '1 / 1'
         }}>
         {/* Рендерим картинку, только если она есть у элемента */}
         {item.image && (
         <img 
           src={item.image} 
           alt={item.name} 
-          style={{ width: '50px', height: '50px', objectFit: 'contain', marginBottom: '5px', loading: 'lazy' }} 
+          style={{ width: '50px', height: '50px', objectFit: 'contain', marginBottom: '5px', loading: 'lazy', aspectRatio: '1 / 1' }} 
         />
       )}
       
@@ -174,7 +175,7 @@ const handleReset = () => {
           background: '#FFFFF0', 
           boxSizing: 'border-box', 
           color: '#008000',
-          display: 'flex', // Включаем flex для всего прямоугольника
+          display: 'flex', // Включаем flex для всего прямоугольника ; loading="lazy" и aspectRatio: '1 / 1' для быстрой загрузки картинок
           flexDirection: 'column',  // Элементы идут друг под другом 
           alignItems: 'center',      // Центрируем и заголовок, и список элементов по горизонтали
           justifyContent: 'center' 

@@ -18,7 +18,7 @@ export default function QuestGame() {
 <div className='container'>
 <header className='header'>
 <h2 className='header_title'>
-    <img src={loupik1} width={90} height={120} alt='loupik' /> 
+    <img src={loupik1} width={90} height={120} alt='loupik' loading="lazy" aspectRatio= '1 / 1' /> 
     Детектив Вебка и пропавшая машинка
     </h2>
         {level > 0 && level < 4 && <span className='badge'>Уровень {level} из 3</span>}
@@ -28,7 +28,7 @@ export default function QuestGame() {
         {level === 0 && (
 <div className='card'>
 <h3>Привет, кодер!</h3>
-<img src={tears} width={270} height={280} alt='tears' />  
+<img src={tears} width={270} height={280} alt='tears' loading="lazy" aspectRatio= '1 / 1' />  
 <p>У твоего друга <b>Сшарпика</b> пропала редкая коллекционная машинка.
 Помоги детективу <b>Вебке</b> раскрыть это дело, используя силу программирования на C#.</p>
 <button className='button' onClick={nextLevel}>Начать расследование</button>
