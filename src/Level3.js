@@ -16,7 +16,7 @@ export default function Level3({ onComplete }) {
   const [showSuccessModal, setShowSuccessModal] = useState(false); // Новое состояние для окна победы
  
   const clickCat = () => {
-    setCatStatus('Вы применили Ключ со стола! Замок открылся. На ошейнике был спрятан Ключ от Багажника!');
+    setCatStatus('Вы применили ключ со стола! Замок открылся. На ошейнике был спрятан ключ от Багажника!');
     setHasKeyFromCat(true);
   };
  
@@ -69,7 +69,7 @@ export default function Level3({ onComplete }) {
         </div>
       )}
 
-      <h3 className="lvl3-h3">Уровень 3: Кот и велосипед</h3>
+      <h3 className="lvl3-h3">Уровень 3: Подозрительный кот и велосипед</h3>
       <p className="lvl3-p">
         <img src={book} width={20} height={20} alt='book' loading="lazy" style={{ verticalAlign: 'middle', marginRight: '5px', aspectRatio: '1 / 1' }} />
         <b>Теория:</b> <b style={{color:'#8B008B'}}>Инкапсуляция</b> в ООП это защита внутренних данных <b style={{color:'#8B008B'}}>объекта</b>. Багажник велосипеда имеет статус <code style={{color: '#FF0000'}}>private</code> (скрыт от всех). 
