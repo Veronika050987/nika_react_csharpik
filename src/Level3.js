@@ -79,12 +79,12 @@ export default function Level3({ onComplete }) {
           textAlign: 'center'
         }}>
           <h4 style={{ color: '#28a745', margin: '0 0 10px 0', fontSize: '20px' }}>
-            <img src={success} alt="success" style={{ width: '70px', height: '70px', objectFit: 'contain' }} />
+            <img src={success} alt="success" style={{ width: '70px', height: '70px', objectFit: 'contain', loading:"lazy", aspectRatio: '1 / 1' }} />
           </h4>
           <p style={{ color: '#333', fontSize: '15px', margin: '0 0 20px 0', lineHeight: '1.5', fontWeight: 'bold' }}>
             Багажник открыт! Внутри лежит коллекционная машинка Сшарпика!
           </p>
-            <p><img src={car} width={110} height={80} alt='final'/></p>
+            <p><img src={car} width={110} height={80} alt='car' loading="lazy" aspectRatio= '1 / 1'/></p>
           <button 
             onClick={onComplete} // Переход на следующий уровень теперь по клику
             style={{ 
@@ -104,10 +104,10 @@ export default function Level3({ onComplete }) {
 
       <h3>Уровень 3: Кот и велосипед</h3>
       <p style={{ background: '#B0E0E6', padding: '10px', borderRadius: '5px', color: '#191970' }}>
-        <img src={book} width={20} height={20} alt='level1'/>
+        <img src={book} width={20} height={20} alt='book' loading="lazy" aspectRatio= '1 / 1'/>
         <b>Теория:</b> <b style={{color:'#8B008B'}}>Инкапсуляция</b> в ООП это защита внутренних данных <b style={{color:'#8B008B'}}>объекта</b>. Багажник велосипеда имеет статус <code style={{color: '#FF0000'}}>private</code> (скрыт от всех). 
         <br/><br/>
-        <img src={question} width={20} height={20} alt='level1'/>
+        <img src={question} width={20} height={20} alt='question' loading="lazy" aspectRatio= '1 / 1'/>
         <b>Твоё задание: </b>
         Попробуй открыть багажник велосипеда.
       </p>
@@ -117,7 +117,7 @@ export default function Level3({ onComplete }) {
         <div style={{ border: '1px solid #aaa', padding: '15px', borderRadius: '8px', flex: 1, background: 'linear-gradient(to bottom right, #6495ED, #87CEFA, #32CD32)' }}>
           <h4>
             <p>Кот Сшарпика</p>
-            <img src={cat} width={160} height={160} alt='cat'/>
+            <img src={cat} width={160} height={160} alt='cat' loading="lazy" aspectRatio= '1 / 1'/>
           </h4>
           <p style={{ fontSize: '14px', color: '#555' }}>{catStatus}</p>
           {!hasKeyFromCat && <button onClick={clickCat} className='button'>Использовать ключ со стола</button>}
@@ -127,7 +127,7 @@ export default function Level3({ onComplete }) {
         <div style={{ border: '1px solid #aaa', padding: '15px', borderRadius: '8px', flex: 1, background: 'linear-gradient(to bottom right, #6495ED, #87CEFA, #32CD32)' }}>
           <h4> 
             Игрушечный велосипед
-            <img src={velo} width={160} height={160} alt='cat'/>
+            <img src={velo} width={160} height={160} alt='velo' loading="lazy" aspectRatio= '1 / 1'/>
           </h4>
           <p style={{ fontSize: '14px', color: '#555' }}>{bikeStatus}</p>
           
