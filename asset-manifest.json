@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nika_react_csharpik/static/css/main.51f06a1b.css",
-    "main.js": "/nika_react_csharpik/static/js/main.7bda450c.js",
+    "main.js": "/nika_react_csharpik/static/js/main.beb2bbd9.js",
     "static/media/bear.png": "/nika_react_csharpik/static/media/bear.6a98bde7c984b3063db6.png",
     "static/media/cat.png": "/nika_react_csharpik/static/media/cat.5009b44a7aaf7e34b510.png",
     "static/media/notepad.png": "/nika_react_csharpik/static/media/notepad.1a6d9c284621b1564730.png",
@@ -32,10 +32,10 @@
     "static/media/logo.svg": "/nika_react_csharpik/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/nika_react_csharpik/index.html",
     "main.51f06a1b.css.map": "/nika_react_csharpik/static/css/main.51f06a1b.css.map",
-    "main.7bda450c.js.map": "/nika_react_csharpik/static/js/main.7bda450c.js.map"
+    "main.beb2bbd9.js.map": "/nika_react_csharpik/static/js/main.beb2bbd9.js.map"
   },
   "entrypoints": [
     "static/css/main.51f06a1b.css",
-    "static/js/main.7bda450c.js"
+    "static/js/main.beb2bbd9.js"
   ]
 }
