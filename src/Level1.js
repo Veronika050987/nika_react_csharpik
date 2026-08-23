@@ -66,7 +66,7 @@ export default function Level1({ onComplete }) {
     setTimeout(() => {
       onComplete();
       setMessage(''); // Сбрасываем сообщение для следующего уровня
-    }, 2000);
+    }, 3000);
 
   } else {
     setMessage('❌ Где-то ошибка или ты забыл собрать все вещи под кроватью! Проверь коробки.');
