@@ -1,14 +1,195 @@
+.return
+{
+    width: 100%;
+    max-width: 600px; 
+    text-align: center; 
+    margin: 0 auto; 
+    color: #00008B; 
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 10px; /* Чтобы контент не лип к краям экрана смартфона */
+}
+
+/* --- МОДАЛЬНОЕ ОКНО --- */
+.modal-window {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Резиновая ширина для мобильных */
+    max-width: 550px;
+    background: #ffffff;
+    padding: 20px 15px; /* Меньше паддинг по бокам на мобильных */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    border: 3px solid #28a745;
+    z-index: 1000;
+    animation: slideDown 0.3s ease-out;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.modal-header {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 12px; 
+    margin-bottom: 15px;
+}
+
+.modal-key-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0; /* Защита картинки ключа от сжатия */
+}
+
+.modal-text {
+    color: #333; 
+    font-size: 15px; 
+    margin: 0 0 20px 0; 
+    line-height: 1.5;
+}
+
+.success
+{
+    color: #155724; 
+    font-weight: bold; 
+    font-size: 17px; /* Чуть уменьшено для баланса на смартфонах */
+    line-height: 1.4;
+    text-align: left; /* Текст внутри флекса выглядит аккуратнее слева */
+}
+
 .compile
 {
-    margin-top: 20px; 
-    padding: 10px 20px;
+    margin-top: 10px; 
+    padding: 12px 24px; /* Увеличена зона тапа для пальца */
     cursor: pointer; 
     background-color: #20B2AA;
     color: #F0F8FF;
     border-radius: 8px;
     font-size: 16px;
+    width: 100%; /* На смартфонах кнопка на всю ширину */
+    max-width: 280px; /* Но не шире этого значения */
+    box-sizing: border-box;
 }
+
 .compile:hover
 {
     background-color: #008B8B;
+}
+
+/* --- ЗАГОЛОВОК И ТЕКСТ --- */
+.h3
+{
+    margin-top: 15px; 
+    margin-bottom: 15px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.3rem; /* Динамический размер текста */
+}
+
+.h3-table-img {
+    width: 60px; /* Уменьшили иконку стола для мобильных */
+    height: 60px;
+    object-fit: contain;
+}
+
+.p
+{
+    background: #B0E0E6; 
+    padding: 15px; 
+    border-radius: 8px; 
+    line-height: 1.5; 
+    margin-top: 0; 
+    color: #00008B;
+    text-align: center; /* Читать теорию выровненной по левому краю сильно удобнее */
+    font-size: 15px;
+}
+
+/* --- СЕТКА КАРТОЧЕК --- */
+.div
+{
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Авто-подгон колонок */
+    gap: 12px; 
+    margin: 20px 0;
+    width: 100%;
+}
+
+/* Новые перенесенные стили карточек */
+.evidence-card {
+    padding: 15px 10px; 
+    border-radius: 8px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #000;
+    box-sizing: border-box;
+}
+
+.evidence-card.found {
+    border: 2px solid #28a745;
+    background: #d4edda;
+}
+
+.evidence-card.hidden {
+    border: 1px solid #aaa;
+    background: linear-gradient(to bottom right, #6495ED, #87CEFA, #32CD32);
+}
+
+.evidence-circle {
+    width: 65px; 
+    height: 65px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 50%;
+}
+
+.circle-transparent { background: transparent; }
+.circle-gray { background: #f0f0f0; }
+
+.evidence-img {
+    width: 55px; 
+    height: 55px; 
+    object-fit: contain;
+}
+
+.evidence-btn {
+    font-family: monospace; 
+    padding: 8px 10px; 
+    background: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 100%; /* Кнопка занимает всю ширину карточки, кликать легче */
+    max-width: 130px;
+    box-sizing: border-box;
+}
+
+.evidence-btn:not(:disabled) {
+    cursor: pointer;
+}
+
+/* --- МЕДИА-ЗАПРОСЫ ДЛЯ СВЕРХМАЛЕНЬКИХ ЭКРАНОВ --- */
+@media (max-width: 360px) {
+    .div {
+        grid-template-columns: 1fr; /* На совсем крошечных телефонах карточки встают в 1 ряд */
+    }
+    
+    .modal-header {
+        flex-direction: column; /* Элементы модалки встают друг под друга */
+        text-align: center;
+    }
+    
+    .success {
+        text-align: center;
+        font-size: 15px;
+    }
 }

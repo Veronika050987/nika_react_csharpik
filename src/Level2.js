@@ -32,66 +32,37 @@ export default function Level2({ onComplete }) {
   };
  
   return (
-    <div style={{ maxWidth: '600px', textAlign: 'center', margin: '0 auto', color: '#00008B', position: 'relative' }}>
+    <div className='return'>
       
       {/* МОДАЛЬНОЕ ОКНО ВВЕРХУ ЭКРАНА */}
       {showModal && (
-        <div style={{
-          position: 'fixed',
-          top: '20px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '90%',
-          maxWidth: '550px',
-          background: '#ffffff',
-          padding: '20px',
-          borderRadius: '12px',
-          boxShadow: '0 10px 30px rgba(0,0,0,0.25)',
-          border: '3px solid #28a745',
-          zIndex: 1000,
-          animation: 'slideDown 0.3s ease-out',
-          textAlign: 'center'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '15px' }}>
+       <div className="modal-window">
+          <div className="modal-header">
             {/* Ваша картинка ключа вместо эмодзи */}
-            <img src={key} width={40} height={40} alt="Ключ" style={{ objectFit: 'contain' }} />
-            <span style={{ color: '#155724', fontWeight: 'bold', fontSize: '18px', lineHeight: '1.4' }}>
-              Отлично! Ты распределил объекты по классам!
+            <img src={key} className="modal-key-img" alt="Ключ" />
+            <span className='success'>
+              Отлично! Ты применил все методы на столе и рассмотрел все улики!
             </span>
           </div>
           
-          <p style={{ color: '#333', fontSize: '15px', margin: '0 0 20px 0', lineHeight: '1.5' }}>
-            Вы нашли ключ! Но от чего он? Вебка заметил подозрительного кота и велосипед у окна...
+          <p className="modal-text">
+            Ты нашёл ключ! Но от чего он? Вебка заметил подозрительного кота и велосипед у окна...
           </p>
           
           <button 
             className='compile'
             onClick={onComplete}
-            style={{ 
-              padding: '10px 24px', 
-              fontSize: '16px', 
-              cursor: 'pointer',
-              fontWeight: 'bold'
-            }}
           >
             Идти к окну
           </button>
         </div>
       )}
 
-      <h3
-      style={{ 
-        marginTop: '10px', 
-        marginBottom: '10px', 
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '10px'
-        }}>
+      <h3 className='h3'>
         Уровень 2: Осмотр письменного стола
         <img src={table} width={80} height={80} alt='table'/> 
       </h3>
-      <p style={{ background: '#B0E0E6', padding: '15px', borderRadius: '8px', lineHeight: '1.5', marginTop: '0', color: '#00008B' }}>
+      <p className='p'>
         <img src={book} width={20} height={20} alt='level1'/>
         <b>Теория:</b> Всё, что ты видишь на столе это <b style={{color:'#8B008B'}}>Объекты </b>(вещи). А всё, что они умеют делать это их <b style={{color:'#8B008B'}}>Методы</b> (действия). Чтобы предмет заработал, нужно вызвать его <b style={{color:'#8B008B'}}>Метод</b>. 
         <br/><br/>
@@ -100,7 +71,7 @@ export default function Level2({ onComplete }) {
         Нажимай на <b style={{color:'#8B008B'}}>Методы</b> под вопросительным знаком, чтобы изучить все улики!
       </p>
  
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', margin: '20px 0' }}>
+      <div className='div'>
         {items.map(item => (
           <div key={item.id} style={{ 
             padding: '15px', 
@@ -137,9 +108,8 @@ export default function Level2({ onComplete }) {
                 cursor: item.found ? 'default' : 'pointer',
                 background: item.found ? '#007bff' : '#007bff', // Кнопка активна, пока не найдено
                 color: '#fff',
-                border: 'none',
                 borderRadius: '4px',
-                fontWeight: 'bold          ' // Исправлена опечатка в стиле
+                fontWeight: 'bold'
               }}
               className={item.found ? '' : 'active-btn'} // Стилизация через классы при необходимости
             >
