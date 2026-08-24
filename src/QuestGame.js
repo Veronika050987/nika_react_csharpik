@@ -3,10 +3,10 @@ import Level1 from './Level1';
 import Level2 from './Level2';
 import Level3 from './Level3';
 import './QuestGame.css';
-import loupik1 from './img/loupik1.png';
 import tears from './img/tears.png';
 import done from './img/done.png';
 import happy from './img/happy.png';
+import spider from './img/spider.png';
  
 export default function QuestGame() {
   const [level, setLevel] = useState(0); // 0: Старт, 1-3: Уровни, 4: Финал
@@ -18,7 +18,7 @@ export default function QuestGame() {
 <div className='container'>
 <header className='header'>
 <h2 className='header_title'>
-    <img src={loupik1} width={90} height={120} alt='loupik' loading="lazy" aspectRatio= '1 / 1' /> 
+    <img src={spider} width={130} height={130} alt='spider' loading="lazy" aspectRatio= '1 / 1' /> 
     Детектив Вебка и пропавшая машинка
     </h2>
         {level > 0 && level < 4 && <span className='badge'>Уровень {level} из 3</span>}
